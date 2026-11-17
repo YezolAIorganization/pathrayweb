@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --color-midnight: #0B1020;
+  --color-navy: #1B2F5E;
+  --color-navy-50: #F4F6FA;
+  --color-navy-100: #E2E8F2;
+  --color-navy-300: #9FB0CF;
+  --color-navy-500: #4A6294;
+  --color-navy-700: #233868;
+  --color-navy-900: #111B36;
+  --color-cyan: #06B6D4;
+  --color-cyan-bright: #22D3EE;
+  --color-success-dark: #34D399;
+  --color-warning-dark: #FBBF24;
+  --color-error-dark: #F87171;
+
+  --font-sora: 'Sora', system-ui, sans-serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --shadow-card: 0 8px 32px 0 rgba(27, 47, 94, 0.08);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-midnight);
+    color: #FFFFFF;
+    font-family: var(--font-inter);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sora);
+    font-weight: 600;
+  }
+}
+
+/* Surface Modes */
+.glass-dark {
+  background: rgba(17, 27, 54, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-lite {
+  background: #111B36;
+}
+
+.glass-panel-dark {
+  background: rgba(11, 16, 32, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(27, 47, 94, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(27, 47, 94, 0.08);
+}
+
+/* Strict Brand Button Guidelines */
+.btn-on-dark {
+  background-color: #FFFFFF;
+  color: #1B2F5E;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+.btn-on-dark:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.btn-on-light {
+  background-color: #1B2F5E;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+.btn-on-light:hover {
+  background-color: #142347;
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
